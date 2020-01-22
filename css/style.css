@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Product+Sans:400,500');
+
+:root {
+  --primary-color: unknown;
+  --secondary-color: #ff0f37;
+  --font-color: #000000;
+  --font-color-light: #FFFFFF;  
+  --font-color-active: #FFFFFF;
+  --bg-color: #FFFFFF;
+  --footer-color: #6200ee;
+  --active-icon: rgba(255, 255, 255, 1);
+  --inactive-icon: rgba(255, 255, 255, 0.6);
+  --heading-color: unknown;
+  --font-family: 'Roboto', 'Segoe UI', Geneva, Verdana, sans-serif;
+  --font-heavy: 600;
+  --elevation-light1: 0 1px 1.5px 0px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  --elevation-light2: 0 1.5px 3px 0px rgba(0, 0, 0, 0.16), 0 3px 3px 0 rgba(0, 0, 0, 0.23);
+  --elevation-light3: 0 10px 10px 0px rgba(0, 0, 0, 0.19), 0 6px 3px 0 rgba(0, 0, 0, 0.23);
+  --elevation-light1-alt: 0 -1px 1.5px 0px rgba(0, 0, 0, 0.12), 0 -1px 1px 0 rgba(0, 0, 0, 0.24);
+  --elevation-light2-alt: 0 -1.5px 3px 0px rgba(0, 0, 0, 0.16), 0 -3px 3px 0 rgba(0, 0, 0, 0.23);
+  --elevation-light3-alt: 0 -10px 10px 0px rgba(0, 0, 0, 0.19), 0 -6px 3px 0 rgba(0, 0, 0, 0.23);
+  --elevation-dark1: none;
+  --elevation-dark2: none;
+  --elevation-dark3: none;
+  --border-padding: none;
+  --border-radius:4px;
+  --text-display: block;
+  --letter-spacing: normal;
+}
+
+[data-theme="dark"] {
+  --primary-color: unknown;
+  --secondary-color: #95041c;
+  --footer-color: #212121; 
+  --font-color: #FFFFFF;
+  --font-color-light: #FFFFFF;
+  --font-color-active: #BB86FC;
+  --bg-color: #121212;
+  --active-icon: var(--font-color-active);
+  --inactive-icon: rgba(255, 255, 255, 0.54);
+  --heading-color: unknown;
+  --font-family: 'Product Sans', 'Segoe UI', Geneva, Verdana, sans-serif;
+  --font-heavy: 500;
+  --elevation-light1: none;
+  --elevation-light2: none;
+  --elevation-light3: none;
+  --elevation-dark1: hsla(0, 0%, 100%, 0.05);
+  --elevation-dark2: hsla(0, 0%, 100%, 0.07);
+  --elevation-dark3: hsla(0, 0%, 100%, 0.08);
+  --border-padding: 10px;
+  --border-radius: 24px;
+  --text-display: inline-block;
+  --letter-spacing: 0.0125em;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+}
+
+.high-text {
+  /*High-emphasis text*/
+  opacity: 0.87;
+  font-family: var(--font-family);
+  color: var(--font-color);
+}
+
+.medium-text {
+  /*Medium-emphasis text*/
+  opacity: 0.60;
+  font-family: var(--font-family);
+  color: var(--font-color);
+}
+
+.disabled-text {
+  /*Low-emphasis text*/
+  opacity: 0.38;
+  font-family: var(--font-family);
+  color: var(--font-color)
+}
+
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: var(--active-icon); }
+.material-icons.md-light.md-inactive { color: var(--inactive-icon); }
+
+/*Simple css to style it like a toggle switch*/
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.button-text {
+  margin-left: 4px;
+  font-size: 14px;
+  font-family: var(--font-family);
+  color: var(--font-color)
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  width: 20px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 12px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 12px;
+}
+
+input:checked+.slider {
+  background-color: #66bb6a;
+}
+
+
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
