@@ -8,7 +8,8 @@
   --font-color-light: #FFFFFF;  
   --font-color-active: #FFFFFF;
   --bg-color: #FFFFFF;
-  --footer-color: #6200ee;
+  --footer-color: #B61827;
+  --header-color: #EF5350;
   --active-icon: rgba(255, 255, 255, 1);
   --inactive-icon: rgba(255, 255, 255, 0.6);
   --heading-color: unknown;
@@ -57,6 +58,7 @@
 body {
     font-family: var(--font-family);
     background-color: var(--bg-color);
+    height: 100%;
 }
 
 .high-text {
@@ -80,6 +82,118 @@ body {
   color: var(--font-color)
 }
 
+.bs-text {
+  /*Bullshit text*/
+  opacity: 0.10;
+  font-family: var(--font-family);
+  color: var(--font-color)
+}
+
+.high-text-light {
+  /*High-emphasis text*/
+  opacity: 0.87;
+  font-family: var(--font-family);
+  color: var(--font-color-active);
+}
+
+.medium-text-light {
+  /*Medium-emphasis text*/
+  opacity: 0.60;
+  font-family: var(--font-family);
+  color: var(--font-color-light);
+}
+
+.disabled-text-light {
+  /*Low-emphasis text*/
+  opacity: 0.38;
+  font-family: var(--font-family);
+  color: var(--font-color-light)
+}
+
+.bs-text-light {
+  /*Bullshit text*/
+  opacity: 0.10;
+  font-family: var(--font-family);
+  color: var(--font-color-light)
+}
+
+footer {
+    background-color: var(--footer-color);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 9vh;
+    box-shadow: var(--elevation-light1-alt);
+    display: flex;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    font-family: var(--font-family);
+    cursor: pointer;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    display: block;
+    font-size: 12px;
+    padding-top: 2px;
+    font-family: 'Roboto Medium' !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: var(--header-color);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 7.5vh;
+  box-shadow: var(--elevation-light2);
+  display: flex;
+}
+.header-box {
+  align-items: center;
+}
+
+.header-title {
+  flex-grow: 3;
+  justify-content: left;
+  display: flex;
+  margin-left: 5vw;
+}
+
+.header-button {
+  background-color: transparent;
+  border: none;
+  font-family: var(--font-family);
+  cursor: pointer;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.grid-main {
+  display: grid;
+  grid-template-rows: repeat(1fr);
+  row-gap: 150%;
+}
+
+.card {
+  box-shadow: var(--elevation-light2);
+  border-radius: var(--border-radius);
+  background-color: var(--elevation-dark2);
+}
 
 /* Rules for sizing the icon. */
 .material-icons.md-18 { font-size: 18px; }
@@ -90,6 +204,7 @@ body {
 /* Rules for using icons as black on a light background. */
 .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
 .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+.material-icons.md-darker { color: rgba(0, 0, 0, 0.87); }
 
 /* Rules for using icons as white on a dark background. */
 .material-icons.md-light { color: var(--active-icon); }
