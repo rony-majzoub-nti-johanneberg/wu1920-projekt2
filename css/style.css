@@ -6,9 +6,9 @@
   --secondary-color: #ff0f37;
   --font-color: #000000;
   --font-color-light: #FFFFFF;  
-  --font-color-active: #FFFFFF;
+  --font-color-active: #EF5350;
   --bg-color: #FFFFFF;
-  --footer-color: #B61827;
+  --footer-color: #FFFFFF;
   --header-color: #EF5350;
   --active-icon: rgba(255, 255, 255, 1);
   --inactive-icon: rgba(255, 255, 255, 0.6);
@@ -28,6 +28,7 @@
   --border-radius:4px;
   --text-display: block;
   --letter-spacing: normal;
+  --icon-color: #EF5350;
 }
 
 [data-theme="dark"] {
@@ -53,6 +54,7 @@
   --border-radius: 24px;
   --text-display: inline-block;
   --letter-spacing: 0.0125em;
+  --icon-color: #EF5350;
 }
 
 body {
@@ -70,7 +72,7 @@ body {
 
 .medium-text {
   /*Medium-emphasis text*/
-  opacity: 0.60;
+  opacity: 0.70;
   font-family: var(--font-family);
   color: var(--font-color);
 }
@@ -94,6 +96,7 @@ body {
   opacity: 0.87;
   font-family: var(--font-family);
   color: var(--font-color-active);
+  font-weight: bolder;
 }
 
 .medium-text-light {
@@ -125,8 +128,9 @@ footer {
     width: 100%;
     text-align: center;
     height: 9vh;
-    box-shadow: var(--elevation-light1-alt);
+    box-shadow: var(--elevation-light2-alt);
     display: flex;
+    z-index: 1;
 }
 
 .button {
@@ -143,10 +147,24 @@ footer {
 
 span {
     display: block;
-    font-size: 12px;
     padding-top: 2px;
-    font-family: 'Roboto Medium' !important;
+    font-weight: bold;
 }
+
+span {
+  font-size: 12px;
+}
+@media screen and (min-width: 320px) {
+  span {
+    font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 700px) {
+  span {
+    font-size: 18px;
+  }
+} 
+
 
 a {
   text-decoration: none;
@@ -159,8 +177,9 @@ header {
   top: 0;
   width: 100%;
   height: 7.5vh;
-  box-shadow: var(--elevation-light2);
+  box-shadow: var(--elevation-light1);
   display: flex;
+  z-index: 1;
 }
 .header-box {
   align-items: center;
@@ -172,6 +191,20 @@ header {
   display: flex;
   margin-left: 5vw;
 }
+
+.header-title {
+  font-size: 18px;
+}
+@media screen and (min-width: 320px) {
+  .header-title {
+    font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 700px) {
+  .header-title {
+    font-size: 28px;
+  }
+} 
 
 .header-button {
   background-color: transparent;
@@ -185,15 +218,92 @@ header {
 
 .grid-main {
   display: grid;
-  grid-template-rows: repeat(1fr);
-  row-gap: 150%;
+  grid-template-rows: repeat(5, 5fr);
+  margin-top: 10vh;
+  grid-gap: 5vh;
+  margin-bottom: 12vh;
 }
 
 .card {
   box-shadow: var(--elevation-light2);
   border-radius: var(--border-radius);
   background-color: var(--elevation-dark2);
+  display: flex;
+  overflow: hidden;
 }
+
+.card-text {
+  flex-grow: 3;
+  justify-content: left;
+  margin-left: 3vw;
+  margin-right: 1vh;
+  align-items: flex-start;
+  margin-top: 1vh;
+}
+
+.card-title {
+  font-size: 22px;
+}
+@media screen and (min-width: 320px) {
+  .card-title {
+    font-size: calc(22px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width:  700px) {
+  .card-title {
+    font-size: 28px;
+  }
+} 
+
+.card-subtitle {
+  font-size: 12px;
+}
+@media screen and (min-width: 320px) {
+  .card-subtitle {
+    font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 700px) {
+  .card-subtitle {
+    font-size: 16px;
+  }
+} 
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.card-image {
+  background-color: transparent;
+  box-shadow: var(--elevation-light1);
+  width: 100%;
+  border-radius: var(--border-radius)
+}
+
+.image-container {
+  flex-shrink: 0;
+  margin-right: 5vw;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+  height: auto;
+  transition: 250ms;
+}
+
+.image-container {
+  width: 15vh;
+}
+@media screen and (min-width: 320px) {
+  .image-container {
+    width: calc(20vh + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 700px) {
+  .image-container {
+    width: 30vh;
+  }
+} 
 
 /* Rules for sizing the icon. */
 .material-icons.md-18 { font-size: 18px; }
@@ -209,6 +319,7 @@ header {
 /* Rules for using icons as white on a dark background. */
 .material-icons.md-light { color: var(--active-icon); }
 .material-icons.md-light.md-inactive { color: var(--inactive-icon); }
+.material-icons.md-active { color: var(--icon-color);}
 
 /*Simple css to style it like a toggle switch*/
 .theme-switch-wrapper {
