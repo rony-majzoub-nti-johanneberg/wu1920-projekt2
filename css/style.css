@@ -11,9 +11,9 @@
   --footer-color: #FFFFFF;
   --header-color: #EF5350;
   --active-icon: rgba(255, 255, 255, 1);
-  --inactive-icon: rgba(255, 255, 255, 0.6);
+  --inactive-icon-light: rgba(255, 255, 255, 0.6);
   --heading-color: unknown;
-  --font-family: 'Roboto', 'Segoe UI', Geneva, Verdana, sans-serif;
+  --font-family: 'Segoe UI', Geneva, Verdana, sans-serif;
   --font-heavy: 600;
   --elevation-light1: 0 1px 1.5px 0px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
   --elevation-light2: 0 1.5px 3px 0px rgba(0, 0, 0, 0.16), 0 3px 3px 0 rgba(0, 0, 0, 0.23);
@@ -27,8 +27,12 @@
   --border-padding: none;
   --border-radius:4px;
   --text-display: block;
-  --letter-spacing: normal;
+  --letter-spacing: 00.025em;
   --icon-color: #EF5350;
+  --inactive-icon-dark: rgba(0, 0, 0, 0.26);
+  --dark-icon:  rgba(0, 0, 0, 0.54);
+  --darker-icon: rgba(0, 0, 0, 0.87);
+
 }
 
 [data-theme="dark"] {
@@ -37,7 +41,7 @@
   --footer-color: #212121; 
   --font-color: #FFFFFF;
   --font-color-light: #FFFFFF;
-  --font-color-active: #BB86FC;
+  --font-color-active: #EF5350;
   --bg-color: #121212;
   --active-icon: var(--font-color-active);
   --inactive-icon: rgba(255, 255, 255, 0.54);
@@ -51,10 +55,13 @@
   --elevation-dark2: hsla(0, 0%, 100%, 0.07);
   --elevation-dark3: hsla(0, 0%, 100%, 0.08);
   --border-padding: 10px;
-  --border-radius: 24px;
+  --border-radius: 12px;
   --text-display: inline-block;
-  --letter-spacing: 0.0125em;
+  --letter-spacing: 0.035em;
   --icon-color: #EF5350;
+  --inactive-icon-dark: rgba(255, 255, 255, 0.33);
+  --dark-icon:  rgba(255, 255, 255, 0.54);
+  --darker-icon: rgba(0, 0, 0, 0.87);
 }
 
 body {
@@ -68,6 +75,7 @@ body {
   opacity: 0.87;
   font-family: var(--font-family);
   color: var(--font-color);
+  font-weight: var(--font-heavy);
 }
 
 .medium-text {
@@ -130,13 +138,14 @@ footer {
     height: 9vh;
     box-shadow: var(--elevation-light2-alt);
     display: flex;
-    z-index: 1;
+    z-index: 0;
 }
 
 .button {
     background-color: transparent;
     border: none;
     font-family: var(--font-family);
+    letter-spacing: var(--letter-spacing);
     cursor: pointer;
     display: flex;
     flex-grow: 1;
@@ -148,7 +157,7 @@ footer {
 span {
     display: block;
     padding-top: 2px;
-    font-weight: bold;
+    font-weight: var(--font-heavy);
 }
 
 span {
@@ -224,12 +233,19 @@ header {
   margin-bottom: 12vh;
 }
 
+.grid-hire {
+  display: grid;
+  margin-top: 10vh;
+  margin-bottom: 12vh;
+}
+
 .card {
   box-shadow: var(--elevation-light2);
   border-radius: var(--border-radius);
   background-color: var(--elevation-dark2);
   display: flex;
   overflow: hidden;
+  transition: 250ms;
 }
 
 .card-text {
@@ -279,7 +295,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   background-color: transparent;
   box-shadow: var(--elevation-light1);
   width: 100%;
-  border-radius: var(--border-radius)
+  border-radius: 2px;
 }
 
 .image-container {
@@ -305,6 +321,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   }
 } 
 
+.inline {
+  display: inline;
+}
+
 /* Rules for sizing the icon. */
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
@@ -312,9 +332,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .material-icons.md-48 { font-size: 48px; }
 
 /* Rules for using icons as black on a light background. */
-.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
-.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
-.material-icons.md-darker { color: rgba(0, 0, 0, 0.87); }
+.material-icons.md-dark { color: var(--dark-icon); }
+.material-icons.md-dark.md-inactive { color: var(--inactive-icon-dark); }
+.material-icons.md-darker { color: var(--darker-icon); }
 
 /* Rules for using icons as white on a dark background. */
 .material-icons.md-light { color: var(--active-icon); }
@@ -380,4 +400,78 @@ input:checked+.slider {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/*Modal CSS*/
+
+body {font-family: var(--font-family);}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: var(--bg-color);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: var(--header-color);
+  color: var(--font-color-light);
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: var(--header-color);
+  color: var(--font-color-light);
 }
