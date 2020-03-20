@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/web-icon.svg">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>News</title>
@@ -11,7 +12,8 @@
 <body>
         <header class="header-box">
             <h2 class="header-title">Buratino</h6>
-                <!-- Trigger/Open The Modal -->
+            <img src="img/web-icon-alt.svg" class="header-icon">
+            <!-- Trigger/Open The Modal -->
             <button id="myBtn" class="header-button"><i class="material-icons md-darker">info</i></button>
 
             <!-- The Modal -->
@@ -21,15 +23,16 @@
             <div class="modal-content">
                 <div class="modal-header">
                 <span class="close">&times;</span>
-                <h2>Modal Header</h2>
+                <h2>Information</h2>
                 </div>
                 <div class="modal-body">
-                <p class="high-text">Media</p> <i class="material-icons md-dark md-inactive">collections</i>
-                <p class="high-text">Contact Info</p> <i class="material-icons md-dark md-inactive">contacts</i>
-                <p class="high-text">Toggle Theme</p> <i class="material-icons md-dark md-inactive">invert_colors</i>
-                </div>
-                <div class="modal-footer">
-                <h3>Modal Footer</h3>
+                <p class="high-text">Media</p> <a href="media.html"> <i class="material-icons md-dark md-inactive modal-button">collections</i> </a>
+                <p class="high-text">Contact Info</p> <a href="contact.html"> <i class="material-icons md-dark md-inactive modal-button">contacts</i> </a>
+                <p class="high-text">Toggle Theme</p> <label class="theme-switch" for="checkbox">
+                            <i class="material-icons md-dark md-inactive modal-button">invert_colors</i>
+                            <input type="checkbox" id="checkbox" />
+                        </label>
+                         <script type="text/javascript" src="js/theme-switch.js"></script>
                 </div>
             </div>
             <script type="text/javascript" src="js/modal.js"></script>
@@ -39,14 +42,6 @@
         <main class="grid-main">
             <div class="card">
                 <div class="card-text">
-                    <div class="theme-switch-wrapper">
-                        <label class="theme-switch" for="checkbox">
-                            <input type="checkbox" id="checkbox" />
-                            <div class="slider round"></div>
-                        </label>
-                        <em class="button-text">Enable Dark Mode!</em>
-                    </div>
-                <script type="text/javascript" src="js/theme-switch.js"></script>
                     <h6 class="card-title high-text">Rebuilding a Website</h6>
                     <p class="card-subtitle medium-text">Welcome! Let us introduce you to our redesigned website, and all of its wonders!</p>
                 </div>
@@ -65,7 +60,7 @@
             </div>
             <div class="card">
                 <div class="card-text">
-                    <h6 class="card-title high-text">Remembring Our Past</h6>
+                    <h6 class="card-title high-text">Remembering Our Past</h6>
                     <p class="card-subtitle medium-text">Today, in light of our new website, we have decided to retire the old site, and remember it with pride.</p>
                 </div>
                 <div class="image-container">
@@ -94,15 +89,15 @@
         <footer>
             <a href="index.html" class="button">
                 <i class="material-icons md-active">notes</i>
-                <span class="high-text-light">News</span>
+                <span class="high-text-light link-text">News</span>
             </a>
             <a href="hire.html" class="button">
                 <i class="material-icons md-dark md-inactive">domain</i>
-                <span class="medium-text">Hire</span>
+                <span class="medium-text link-text">Hire</span>
             </a>
             <a href="events.html" class="button">
                 <i class="material-icons md-dark md-inactive">event</i>
-                <span class="medium-text">Events</span>
+                <span class="medium-text link-text">Events</span>
             </a>
         </footer>
 </body>
