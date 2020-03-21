@@ -3,7 +3,7 @@
 
 :root {
   --primary-color: unknown;
-  --secondary-color: #ff0f37;
+  --secondary-color: unknown;
   --font-color: #000000;
   --font-color-light: #FFFFFF;  
   --font-color-active: #EF5350;
@@ -13,7 +13,7 @@
   --active-icon: rgba(255, 255, 255, 1);
   --inactive-icon-light: rgba(255, 255, 255, 0.6);
   --heading-color: unknown;
-  --font-family: 'Segoe UI', 'Roboto', Verdana, sans-serif;
+  --font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
   --font-heavy: 600;
   --elevation-light1: 0 1px 1.5px 0px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
   --elevation-light2: 0 1.5px 3px 0px rgba(0, 0, 0, 0.16), 0 3px 3px 0 rgba(0, 0, 0, 0.23);
@@ -39,7 +39,7 @@
 
 [data-theme="dark"] {
   --primary-color: unknown;
-  --secondary-color: #95041c;
+  --secondary-color: unknown;
   --footer-color: #212121; 
   --font-color: #FFFFFF;
   --font-color-light: #FFFFFF;
@@ -48,7 +48,7 @@
   --active-icon: var(--font-color-active);
   --inactive-icon: rgba(255, 255, 255, 0.54);
   --heading-color: unknown;
-  --font-family: 'Segoe UI', 'Roboto', Geneva, Verdana, sans-serif;
+  --font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
   --font-heavy: 600;
   --elevation-light1: none;
   --elevation-light2: none;
@@ -255,7 +255,7 @@ header {
 }
 
 .header-icon {
-  width: 36px;
+  width: 42px;
 }
 
 .grid-main {
@@ -286,12 +286,12 @@ header {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (min-width:  875px) {
+@media screen and (min-width:  1000px) {
   .grid-media {
     grid-template-columns: repeat(3, 1fr);
   }
 } 
-@media screen and (min-width:  1225px) {
+@media screen and (min-width:  1400px) {
   .grid-media {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -586,8 +586,22 @@ body {font-family: var(--font-family);}
 .modal-header {
   padding: 2px 16px;
   background-color: var(--header-color);
-  color: var(--font-color-light); 
 }
+
+.modal-header {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 320px) {
+  .modal-header {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width:  700px) {
+  .modal-header {
+    font-size: 20px;
+  }
+} 
 
 .modal-body {
   display: flex;

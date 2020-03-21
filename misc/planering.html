@@ -21,6 +21,10 @@
         body {
             font-family: 'Segoe UI', 'Roboto', Geneva, Verdana, sans-serif;
         }
+        img {
+            width: 240px;
+            transform: rotate(90deg);
+        }
     </style>
 
 </head>
@@ -33,11 +37,21 @@
     Jag skall göra en sida som praktiskt sett redesignar en annan webbsida. Nämligen <a href="http://www.buratino.se/">buratino.se</a>. 
     Denna sidan tillhör en klient jag arbetade för inom Gränssnittsdesign, där jag skapade en mobil applikation. 
     Målet med detta projektet är att skapa en webbsida som passar stilen av min applikation, samt att sidan kan komplementera applikationen.
+    Sidan skall dessutom iterera över funktioner jag använt tidigare inom webbutveckling, såsom Material Design, färgteman, responsivitet, och animationer.
+    <br>
+    Målgruppen är vuxna, mestadels över 30-års åldern. De flesta kan navigera en webbsida, men det finns en del äldre användare som kan behöva lite anpassning.
+    <br><br>
+    För mer information gällande målgrupper och bakgrund, vänligen se denna <a href="https://docs.google.com/document/d/1I3t2PTNwm8yvVRtdlWkPsFSsefHan9ZZ5-GC99gDBpw/edit?usp=sharing">GSD-Rapporten</a>.
     <!-- Vad ska du göra? Vilken är din målgrupp? Om du utvecklar en tidigare sida; Vad ska du förändra/utveckla? -->
 
     <h2>2. Planering</h2>
 
     <h3>2.1 Handskiss</h3>
+    <br>
+    <img src="news-skiss.jpg">
+    <img src="hire-skiss.jpg">
+    <img src="events-skiss.jpg">
+    <br><br>
     <!-- Här lägger du en bild på din handskiss av layouten. Viktigt att du beskriver vilka boxelement som ska användas. Visa även hur du tänker med ditt grid (Hur många kolumner?) -->
 
     <h3>2.2 Schema</h3>
@@ -156,7 +170,8 @@
     <!-- Här skriver du efter varje lektion. Vad har jag gjort? Vad gick bra? Vad gick mindre bra? Vad ska jag tänka på till nästa gång? -->
 
     <h3>Lektion vecka 4</h3>
-    Jag har börjat starta upp användningen av Github, som skall användas genom hela projektet. Jag har dessutom importerat tidigare CSS-kod, som används som ett slags "template" i projektet.
+    Jag har börjat starta upp användningen av Github, som skall användas genom hela projektet. 
+    Jag har dessutom importerat tidigare CSS-kod, som används som ett slags "template" i projektet.
     <!-- Fyll på med dokumentation här. -->
 
     <h3>Lektion vecka 5</h3>
@@ -172,24 +187,91 @@
     <!-- Fyll på med dokumentation här. -->
 
     <h3>Lektion vecka 9</h3>
-    En bra grund till sidan har byggts upp.  Däremot gick det inte bra att få till ett grid-system in till sidan. Nästa gång skall jag bearbeta min grid implementation, för att uppnå den layouten jag har skissat innan.
+    En bra grund till sidan har byggts upp.  Däremot gick det inte bra att få till ett grid-system in till sidan. 
+    Nästa gång skall jag bearbeta min grid implementation, för att uppnå den layouten jag har skissat innan.
     <!-- Fyll på med dokumentation här. -->
 
     <h3>Lektion vecka 10</h3>
-    Grid-systemet är nu uppbyggd! Jag har dessutom förfinat delar av sidan, samt testat sidan på en riktig mobiltelefon! Jag har också äntligen löst en "bugg" som har hindrat mig att arbeta smidigt i ungefär ett halvår! Nästa gång skall jag förfina grid-systemet, samt börja arbeta på de andra sidorna.
+    Grid-systemet är nu uppbyggd! Jag har dessutom förfinat delar av sidan, samt testat sidan på en riktig mobiltelefon! 
+    Jag har också äntligen löst en bugg som har hindrat mig att arbeta smidigt i ungefär ett halvår! Nästa gång skall jag förfina grid-systemet, samt börja arbeta på de andra sidorna.
     <!-- Fyll på med dokumentation här. -->
 
     <h3>Lektion vecka 11</h3>
-    Första sidan är helt färdig! Det tog sin tid, men sidan är nu optimal till flera plattformar, genom användningen av media-queries. Nu när min layout-template och CSS är färdig, kan jag mycket snabbare implementera de andra sidorna! Nästa gång skall jag skapa de andra sidorna, och implementera någon funktion som använder sig av JavaScript.
+    Första sidan är helt färdig! Det tog sin tid, men sidan är nu optimal till flera plattformar, genom användningen av media-queries. 
+    Nu när min layout-template och CSS är färdig, kan jag mycket snabbare implementera de andra sidorna! 
+    Nästa gång skall jag skapa de andra sidorna, och implementera någon funktion som använder sig av JavaScript.
     <!-- Fyll på med dokumentation här. -->
 
     <h3>Lektion vecka 12</h3>
+    Crunch Lektion! Under både lektionstid och fritid, har jag arbetat med webbsidan. 
+    Under veckan har jag skapat alla andra delsidor, samt implementerat funktioner som använder sig utav JavaScript, precis som jag förutsatt förra veckan.
+    Men jag har dessutom skapat en ikon, en Favicon, en ny Modal, och mycket mer!
+    Jag har också implementerat en video, som är webboptimerad genom användningen av .webm formatet, samt att jag har ytterligen komprimerat videon genom Handbrake, så att den laddar in snabbare.
+    <br><br>
+    Att skapa de andra delsidorna gick nämligen mycket snabbare denna gången, då jag hade redan skrivit en grund-layout, som jag itererade över vid skapandet av de andra delsidorna.
+    När jag lade till content till mina sidor, hände det lätt att buggar kom upp, och att problem som verkar olösbara dyker upp. 
+    Exempel kan vara grids som inte lyder CSS-kod korrekt, eller responsiva layouter som inte var så hemskt responsiva. 
+    Men eventuellt, lyckades jag lösa de problem, tack vare trial & error, och råd från andra elever och källor.
+    Arbetet var förvånansvärt roligt, vilket gjorde att framsteg flöt fram ganska snabbt!
     <!-- Fyll på med dokumentation här. -->
 
     <h2>4. Testning</h2>
+    Mellan Chrome och Firefox observerades nästan inga skillnader. 
+    Enda skillnaden var att Chrome cachar sidorna efter att man först har öppnat dem, vilket gör att sidan känns extremt mycket snabbare.
+    Inom Firefox däremot, öppnade den varje sida från grunden varje gång, vilket bidrog till att hela webbsidan kändes långsammare, 
+    samt att sidorna flimrade de första par millisekunderna efter att man har öppnat en ny sida.
+    Annars var de identiska, med nästan ingen användning av .webkit eller .moz!
+    <br><br>
+    Mobiltesterna gick förvånansvärt smidigt! Endast två problem uppstod:
+    <br>
+    1. .SVG-filer är inte helt supported av mobila webbläsare, därför var jag tvungen att använda mig utav .PNG-filer istället.
+    <br>
+    2. När mobilen roterades till Landscape, var layouten extremt buggat. Detta skulle kunna lösas med att låsa rotation till Portrait, men då skulle iPads påverkas negativt. 
+    Alternativt skulle jag kunna lösa problemet med hjälp av media-queries, men eftersom detta är ett extremt specifikt problem, valde jag att spendera tid på mer viktigare uppgifter.
+    <br><br>
+    När det gäller kontrast, använde jag mig utav <a href="https://contrastchecker.com/">contrastchecker.com</a>. Resultaten lydde såhär:
+    <br><br>
+    (Svart Text/Röd Bakgrund): Kontrasten var bra nog på en grundnivå för små fonter, och den var hysat bra för fonter över 18pt.
+    För att öka läsligheten, användes en bold font-weight till texten, samt att storleken var över 18px. 
+    Då denna kombinationen används endast två gånger i hela sidan, är det enkelt att kontrollera, och att få det läsbart.
+    <br><br>
+    (Röd Text/Mörk Bakgrund): Denna färgkombinationen klarade sig inte lika bra som den förra. Ett exempel är färgblindhet. 
+    Skillnaden i brightness mellan färgerna är inte bra nog för att vara helt läsbar av färgblinda användare.
+    Jag försökte lösa detta genom andra metoder, som att ge elementet med denna färgkombinationen en högre font-weight, 
+    samt lade jag till den röda färgen till både text och ikoner, så en större yta skulle bli färgad.
+    <br><br>
+    (Röd Text/Vit Bakgrund): Denna färgkombinationen lider av samma brister som den förra, fast på en större skala.
+    färgkombinationen används inom samma områden som den förra, fast endast vid light-theme då, istället för dark-theme.
+    Därför kan jag förbättra läsligheten genom exakt likadana metoder.
+    <br><br>
+    (Svart-vit Text/Ljus-mörk Bakgrund): För alla andra textrutor, såsom h1-h6 taggar, samt alla p taggar används en ren monokrom färgkombination.
+    Detta garanterar att kontrasten är mer än hög nog för att vara väl läsbart. Jag har dessutom använt varierade opacities och font-weights, beroende på vilken betydelse en textruta har.
+    Då kan en större och viktigare titel - säg en h2 tag - få en klass som ger den högst opacity och ett högt font-weight värde.
+    Medan lite oviktig brödtext - säg en p tag - får en klass med lägre opacity, och ett lägre font-weight värde.
+    Detta görs för att ge läsaren en bättre idé på vart deras ögon bör fokusera, alltså skilja mellan hur viktiga olika element är.
+    Dessutom hjälper detta att bygga upp en sorts hierarki, vilket låter användaren läsa texten på ett mer smidigt och flödigt sätt.
     <!-- Testa i Chrome + Firefox eller Safari (på både dator och mobil). Skiljer sig resultatet? Har du behövt anpassa ditt kod/innehåll efter de olika webbläsarna? Hur gick valideringen? Vad säger contrastchecker.com om text/bakgrundsfärg? Hur ser resultatet ut på en riktig telefon? -->
 
     <h2>5. Utvärdering</h2>
+    När jag väl fick en grund-layout till sidan, fick arbetet extremt smidigt. Jag kände att mina kunskaper och förståelse kring sidans upplägg förbättrades stort när det väl hände.
+    Vid den punkten, finns det inte mycket jag skulle vilja ändra på. Ett problem dock, var att denna smidigheten kom alldeles för sent under projekttiden. 
+    Den största anledningen till detta är de första tre lektionerna. De första två, hade jag ingen aning över vad för slags webbsida jag skulle skapa, därför blev det effektivt slösad tid.
+    När jag väl hade någon idé, var jag frånvarande från den tredje lektionen. Effektivt hade jag totalt förlorat tre veckors arbetstid. 
+    <br><br>
+    Ifall jag istället hade en idé från början, skulle jag ha kunnat göra klart grundarbetet mycket tidigare, och därmed komma in i den smidiga arbetsflödet snabbare.
+    Då skulle allting som gjordes vecka 12 ha gjorts ett par veckor innan, och gett mer tid till en bättre optimerad desktop-layout, smidigare grid-transitions, och lösningar till små buggar.
+    
+    Exempel på små buggar är: 
+    När dark-theme används, kommer sidan att flimra ett par millisekunder när man laddar en ny sida. 
+    När mobila webbläsare används, ändrar bilder sin storlek med ett par pixlar, när man skrollar längst upp eller ner på sidan.
+
+    Om jag också hade gjort en mer detaljerad planering, skulle det ha varit mycket mer strukturerat arbete, och då kunde jag ha undvikit att hitta nya arbetsuppgifter sista-minuten. 
+    <br><br>
+    I slutändan, var jag väldigt nöjd med slutprodukten! Jag lyckades nå mina mål som jag har satt både från förra projektet, samt från början av kursen 
+    (Att lyckas göra en responsiv webbsida, samt kunna designa en hel webbsida med Material Design).
+    Jag är stolt över att ha konstruerat en sida som består av så många olika delar (CSS,JS,PS Icon, osv), och att ha äntligen avslutat projektet.
+    Jag hoppas att vi gör liknande projekt i framtiden, då ett skolarbete har inte varit såhär kul på ett bra tag!
+
     <!-- Ex: Vad gick bra/mindre bra? (i arbetet/din förmåga).
     Nyanserat: "hur hade det blivit om jag istället hade...?"
     Konkreta förbättringsförslag i produkt + process. -->
