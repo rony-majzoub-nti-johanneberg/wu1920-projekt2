@@ -250,6 +250,23 @@
     Medan lite oviktig brödtext - säg en p tag - får en klass med lägre opacity, och ett lägre font-weight värde.
     Detta görs för att ge läsaren en bättre idé på vart deras ögon bör fokusera, alltså skilja mellan hur viktiga olika element är.
     Dessutom hjälper detta att bygga upp en sorts hierarki, vilket låter användaren läsa texten på ett mer smidigt och flödigt sätt.
+    <br><br>
+    <strong>KOMPLETTERING:</strong> Med den uppdaterade sidan, har nya tester igen gjorts på Chrome & Firefox, i både Mobil & Desktop. 
+    Men sidan har dessutom testats på Samsung Internet Browser, och Microsoft Edge (Legacy). SIB gav identiska resultat till mobil Chrome/Firefox. 
+    Edge däremot har en liten bugg där footern animerar någon slags höjdskillnad när man laddar en sida. Detta har förmodligen något att göra med hur gamla Edge räknar ut view-height och view-width. 
+    Eftersom detta endast pågår i den gamla Edge-läsaren, är detta inget allvarligt problem (för att lösa problemet krävs att ta helt bort alla animationer från sidan, vilket jag inte vill).
+    En till konstig bugg, är faktumet att ifall sidan kördes lokalt, kunde man inte byta till dark-mode! Problemet uppstod inte när den kördes från Github Pages. 
+    Detta har förmodligen något att göra med hur gamla Edge hanterar lokala sidor, där den kanske inte tar emot JavaScriptet som används till den på ett snällt sätt. Men det är bara en gissning!
+    Det nya Edge (byggt på Chromium) bör vara helt okej, då den är byggt på Chromium, precis som Google Chrome.
+    <br><br>
+    För automatiska tester, testades HTML <a href="https://validator.w3.org/nu/">på denna sidan</a>, och CSS testades <a href="http://jigsaw.w3.org/css-validator/">på denna sidan</a>. 
+    Det enda som kom upp var ett par småfel gällande syntax i HTML, som kunde lösas på direkten. Dessa syntaxfel orsakade inga problem i själva slutprodukten. 
+    Dessutom dök upp flera varningar vid delen där Google Maps integrerades. 
+    Då det inte är helt min egna lösning (och därmed vet jag inte 100% hur den fungerar), bestämde jag att lämna den ifred, då den fortfarande funkar bra i slutprodukten.
+    <br>
+    När CSS testades, gav sidan en alarmerande error för alla användningar av variabler i min kod. Självklart var detta falska alarm, så det var inget att oroa sig över.
+    De enda riktiga varningarna var gällande ett par rader som dök upp från importerad kod. 
+    Därför bestämde jag att lämna det ifred, eftersom den ändå funkade, och jag vet inte hur problemet skulle egentligen kunna lösas, på ett sätt som testet tycker om.
     <!-- Testa i Chrome + Firefox eller Safari (på både dator och mobil). Skiljer sig resultatet? Har du behövt anpassa ditt kod/innehåll efter de olika webbläsarna? Hur gick valideringen? Vad säger contrastchecker.com om text/bakgrundsfärg? Hur ser resultatet ut på en riktig telefon? -->
 
     <h2>5. Utvärdering</h2>

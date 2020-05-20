@@ -151,11 +151,16 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
-    height: 9vh;
+    height: 9vmax;
     box-shadow: var(--elevation-light2-alt);
     display: flex;
     z-index: 0;
     transition: var(--animation);
+}
+@media screen and (min-width: 1000px) {
+  footer {
+    height: 9vh;
+  }
 }
 
 .button {
@@ -207,10 +212,16 @@ header {
   left: 0;
   top: 0;
   width: 100%;
-  height: 7.5vh;
+  height: 7.5vmax;
   box-shadow: var(--elevation-light1);
   z-index: 1;
 }
+@media screen and (min-width: 1000px) {
+  header {
+    height: 7.5vh;
+  }
+}
+
 .header-box {
   display: flex;
   align-items: center;
@@ -434,7 +445,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .media-container {
   flex-shrink: 0;
-  margin-right: 5vw;
   margin-top: 2vh;
   margin-bottom: 1vh;
   height: auto;
